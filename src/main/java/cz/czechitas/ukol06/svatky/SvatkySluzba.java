@@ -32,24 +32,27 @@ public class SvatkySluzba {
         return vyhledatSvatkyKeDni(MonthDay.now());
     }
 
-    public Stream<Svatek> svatkyStream() {
-        try {
-            Path path = Paths.get(SeznamSvatku.class.getResource(cestaKDatum.toURI());
-            return Files.lines(path).map(SeznamSvatku::parseLine);
-        } catch (URISyntaxException | IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public Stream<Svatek> svatkyStream() {
+//        try {
+//            Path path = Paths.get(SeznamSvatku.class.getResource(cestaKDatum.toURI());
+//            return Files.lines(path).map(SeznamSvatku::parseLine);
+//        } catch (URISyntaxException | IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public List<String> vyhledatSvatkyKeDni(MonthDay day) {
         // TODO
-        // získat seznam svátků
+        // získat seznam svátků pro tento den
         // převést na Stream
         // pomocí metody filter() vybrat jen ty, které odpovídají zadanému dni (porovnat MonthDay pomocí metodyequals())
         // pomocí metody map() získat z objektu jméno
         // pomocí toList() převést na List
-        return svatkyStream()
+
+        List<Svatek> vsechnySvatky = seznamSvatku.getSvatky();
+        return vsechnySvatky.stream()
                 .filter(svatek -> svatek.getDen().equals(day))
+//                .filter(svatek -> svatek.getJmeno().length() > 3)
                 .map(Svatek::getJmeno)
                 .toList();
 
