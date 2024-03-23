@@ -6,9 +6,7 @@ import cz.czechitas.ukol06.svatky.SvatkySluzba;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Hlaví třída pro aplikaci Svátky.
- */
+
 public class HlavniProgram {
     /**
      * Spouštěcí metoda celé aplikace.

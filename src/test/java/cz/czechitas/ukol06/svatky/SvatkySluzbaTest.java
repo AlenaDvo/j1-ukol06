@@ -10,10 +10,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SvatkySluzbaTest {
-
+    // test metody vyhledatSvatkyKeDni
     @Test
     void vyhledatSvatekKeDniKdyMaSvatekJedenClovek() throws IOException {
-        // test metody vyhledatSvatkyKeDni
         // den, kdy má svátek jedno jméno
         SvatkySluzba svatkySluzba = new SvatkySluzba();
         assertEquals(List.of("Diana"), svatkySluzba.vyhledatSvatkyKeDni(MonthDay.parse("--01-04")));
